@@ -20,11 +20,12 @@ let AppController = class AppController {
     constructor(puserService) {
         this.puserService = puserService;
     }
-    chat(username, message) {
-        return this.puserService.message("chat", "message", {
+    async chat(username, message) {
+        await this.puserService.message("chat", "message", {
             username,
             message
         });
+        return [];
     }
 };
 exports.AppController = AppController;
@@ -34,7 +35,7 @@ __decorate([
     __param(1, (0, common_1.Body)('message')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, String]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], AppController.prototype, "chat", null);
 exports.AppController = AppController = __decorate([
     (0, common_1.Controller)('api'),

@@ -8,13 +8,14 @@ export class AppController {
   ) { }
 
   @Post('message')
-  chat(
+  async chat(
     @Body('username') username: string,
     @Body('message') message: string
   ) {
-    return this.puserService.message("chat", "message", {
+    await this.puserService.message("chat", "message", {
       username,
       message
     })
+    return []
   }
 }
