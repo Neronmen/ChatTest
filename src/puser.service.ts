@@ -14,6 +14,7 @@ export class PuserService {
             useTLS: true
         })
     }
+
     async message(channel: string, event: string, data: any) {
         await this.pusher.trigger(channel, event, data)
     }
