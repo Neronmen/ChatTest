@@ -21,6 +21,7 @@ let AppController = class AppController {
         this.puserService = puserService;
     }
     async chat(username, message) {
+        console.log("Hello");
         await this.puserService.message("chat", "message", {
             username,
             message

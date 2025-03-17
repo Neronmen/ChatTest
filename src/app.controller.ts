@@ -12,6 +12,7 @@ export class AppController {
     @Body('username') username: string,
     @Body('message') message: string
   ) {
+    console.log("Hello")
     await this.puserService.message("chat", "message", {
       username,
       message
